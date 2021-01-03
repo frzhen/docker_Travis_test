@@ -5,4 +5,12 @@ services:
 script:
   - docker build -t frzhen77/node .
   - docker images frzhen77/node
-  
+
+  before_deploy:
+    - docker login -u frzhen77 -p #B6511342
+
+  deploy:
+    provider: script
+    script: docker push frzhen77/node
+    on:
+      branch: master
