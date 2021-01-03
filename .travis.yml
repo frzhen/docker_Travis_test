@@ -5,3 +5,4 @@ services:
 script:
   - docker build -t frzhen77/node .
   - docker images frzhen77/node
+  
